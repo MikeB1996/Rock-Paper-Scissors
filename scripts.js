@@ -1,9 +1,10 @@
-//generates numbers from 0 to 2 and assigns them to the 3 choices for Rock/Paper/Scissors
+//declaration of the number of points needed to win (change in case you want it higher or lower)
 const winningPoints= 5;
+//declaration and initialization of the point counters
 let playerPoints=0;
 let computerPoints=0;
 
-
+//generates numbers from 0 to 2 and assigns them to the 3 choices for 1=Rock/0=Paper/2=Scissors
 function getComputerChoice() {
     let num= Math.floor(Math.random() * 3);
     let result;
@@ -20,7 +21,8 @@ function getComputerChoice() {
 let choice;
 
 
-//functions that are called when the button that indicates the player's choice is clicked
+//functions that are called when the button that indicates the player's choice is clicked and 
+//calls the function that plays the game
 function buttonClick() {
     let Choice = "Rock";
     playerChoice(Choice);
@@ -116,6 +118,7 @@ function game(whoWins) {
         MYpoints.innerHTML= playerPoints;
     }
 
+    //checks if the game should end or not
     if (playerPoints>=5) {
         alert('you won');
         gameEnd();
@@ -130,7 +133,7 @@ function game(whoWins) {
     }
 }
 
-//disables the game buttons as the game ended
+//disables the game buttons as the game ended leaving only reset game clickable
 function gameEnd() {
     document.getElementById("but1").disabled = true;
     document.getElementById("but2").disabled = true;
@@ -138,7 +141,7 @@ function gameEnd() {
 
 }
 
-//restarts the game (resets all the counters)
+//restarts the game (resets all the counters) by calling start game
 function resClick() {
     startGame();
 }
@@ -153,6 +156,7 @@ function startGame() {
     document.getElementById("resButton").disabled = false;
     playerPoints=0;
     computerPoints=0;
+    //resets the counters that are displayed in the page too
     let PCpoints = document.getElementById('PcPoints') ;
     PCpoints.innerHTML= 0;
     let MYpoints = document.getElementById('MyPoints') ;
