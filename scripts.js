@@ -1,5 +1,7 @@
 //generates numbers from 0 to 2 and assigns them to the 3 choices for Rock/Paper/Scissors
 const winningPoints= 5;
+let playerPoints=0;
+let computerPoints=0;
 
 
 function getComputerChoice() {
@@ -94,18 +96,68 @@ function RockPaperScissors(playerChoice,computerChoice) {
 //function that takes the player choice
 function playerChoice(choice){
     let computerCho= getComputerChoice();
-    RockPaperScissors(choice,computerCho);
+    let Win= RockPaperScissors(choice,computerCho);
+    game(Win);
 }
 
 
 // it manages who wins (so the first to get 5 points)
-function game() {
+function game(whoWins) {
+    //increases the counter of who won this round or does nothing if it's a draw
+    if (whoWins==0) {
+
+    } else if (whoWins==1) {
+        computerPoints+=1;
+        let PCpoints = document.getElementById('PcPoints') ;
+        PCpoints.innerHTML= computerPoints;
+    } else {
+        playerPoints+=1;
+        let MYpoints = document.getElementById('MyPoints') ;
+        MYpoints.innerHTML= playerPoints;
+    }
+
+    if (playerPoints>=5) {
+        alert('you won');
+        gameEnd();
+        return;
+    } else if (computerPoints>=5) {
+        alert('the computer won');
+        gameEnd();
+        return;
+
+    } else {
+        return;
+    }
+}
+
+//disables the game buttons as the game ended
+function gameEnd() {
+    document.getElementById("but1").disabled = true;
+    document.getElementById("but2").disabled = true;
+    document.getElementById("but3").disabled = true;
 
 }
 
-
 //restarts the game (resets all the counters)
 function resClick() {
+    startGame();
+}
+
+
+//activates the other buttons after clicking start and starts the game by calling game function
+//resets the counters for the win
+function startGame() {
+    document.getElementById("but1").disabled = false;
+    document.getElementById("but2").disabled = false;
+    document.getElementById("but3").disabled = false;
+    document.getElementById("resButton").disabled = false;
+    playerPoints=0;
+    computerPoints=0;
+    let PCpoints = document.getElementById('PcPoints') ;
+    PCpoints.innerHTML= 0;
+    let MYpoints = document.getElementById('MyPoints') ;
+    MYpoints.innerHTML= 0;
+    document.getElementById("startBut").disabled = true;
 
 }
 

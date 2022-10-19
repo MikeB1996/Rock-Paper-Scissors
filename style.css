@@ -12,3 +12,14 @@ body {
     font-size: 36px;
     
 }
+
+.choice {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+button {
+    padding: 8px 16px;   
+    margin: 16px; 
+}
