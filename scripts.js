@@ -141,6 +141,7 @@ function game(whoWins) {
 //disables the game buttons as the game ended leaving only reset game clickable
 function gameEnd() {
     document.getElementById("groupButton").style.display = "none";
+    document.getElementById("pick").style.display = "none";
     
 
 }
@@ -149,6 +150,7 @@ function gameEnd() {
 function resClick() {
     let Winner = document.getElementById("Winner");
     Winner.innerHTML="";
+    document.getElementById("pick").style.display = "block";
     document.getElementById("groupButton").style.display = "block";
     startGame();
 
