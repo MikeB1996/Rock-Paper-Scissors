@@ -18,42 +18,50 @@
     <div>
         <button id="startBut" onclick="startGame()" class="startB"> Start</button>
     </div>
-
-    <div class="rulesdes">
-        Take your pick
-    </div>
-
-
-    <div class="choice">
-        <div>
-            <button type="button" disabled id="but1" onclick="buttonClick() " class="buttchoice">Rock</button>
-            <button type="button" disabled id="but2" onclick="buttonClick2()" class="buttchoice2">Paper</button>
-            <button type="button" disabled id="but3" onclick="buttonClick3()" class="buttchoice3">Scissors</button>
-        </div>
-
+    <div id="game1" class="game">
         
-    </div>
-
-
-
-    <div class="restart">
-        <div class="pointsCounter">
-            <div class="MyPointsCounter">
-                <p>Your points are:</p>
-                <p id="MyPoints">0</p>
-            </div>
-            <div class="PcPointsCounter">
-                <p> The computer points are:</p>
-                <p id="PcPoints">0</p>
-
-            </div>
-
+    
+        <div class="rulesdes">
+            Take your pick
         </div>
-
-        <div>
-            <button type="button" disabled id="resButton" onclick="resClick()" ">Restart</button>
+    
+    
+        <div class="choice">
+            <div id="groupButton">
+                <button type="button" id="but1" onclick="buttonClick() " class="buttchoice">Rock</button>
+                <button type="button" id="but2" onclick="buttonClick2()" class="buttchoice2">Paper</button>
+                <button type="button" id="but3" onclick="buttonClick3()" class="buttchoice3">Scissors</button>
+            </div>
+    
+            
+        </div>
+        
+    
+    
+    
+        <div class="restart">
+            <div class="pointsCounter">
+                <div class="MyPointsCounter">
+                    <p>Your points are:</p>
+                    <p id="MyPoints">0</p>
+                </div>
+                <div class="PcPointsCounter">
+                    <p> The computer points are:</p>
+                    <p id="PcPoints">0</p>
+    
+                </div>
+    
+            </div>
+    
+            <div>
+                <button type="button" id="resButton" onclick="resClick()" ">Restart</button>
+            </div>
         </div>
     </div>
+    <div>
+        <p id="Winner" class="roundWinner"></p>
+    </div>
+    
 
     <script src="scripts.js">
         

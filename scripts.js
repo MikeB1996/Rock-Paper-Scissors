@@ -44,49 +44,50 @@ function buttonClick3() {
 // it returns winValue that show who won this round (0=draw,1= the computer won,2= the player won)
 function RockPaperScissors(playerChoice,computerChoice) {
     let winValue
+    let Winner = document.getElementById("Winner");
   switch (true){
     case (playerChoice==="Rock" || computerChoice==="Rock"):
-        alert("It's a draw");
+        Winner.innerHTML="I'ts a draw";
         winValue= 0;
         return winValue;
         break;
     case (playerChoice==="Rock" || computerChoice==="Paper"):
-        alert("The computer wins");
+        Winner.innerHTML="The Computer won this round";
         winValue= 1;
         return winValue;
         break;
     case (playerChoice==="Rock" || computerChoice==="Scissors"):
-            alert("You win");
-            winValue= 2;
+        Winner.innerHTML="You won this round";
+        winValue= 2;
         return winValue;
         break;
     case (playerChoice==="Paper" || computerChoice==="Rock"):
-        alert("You win");
+        Winner.innerHTML="You won this round";
         winValue= 2;
         return winValue;
         break;
     case (playerChoice==="Paper" || computerChoice==="Paper"):
-        alert("it's a draw");
+        Winner.innerHTML="I'ts a draw";
         winValue= 0;
         return winValue;
         break;
     case (playerChoice==="Paper" || computerChoice==="Scissors"):
-        alert("The computer wins");
+        PcWinner.innerHTML="The Computer won this round";
         winValue= 1;
         return winValue;
         break;
     case (playerChoice==="Scissors" || computerChoice==="Rock"):
-        alert("The computer wins");
+        Winner.innerHTML="The Computer won this round";
         winValue= 1;
         return winValue;
         break;
     case (playerChoice==="Scissors" || computerChoice==="Paper"):
-        alert("You win");
+        Winner.innerHTML="You won this round";
         winValue= 2;
         return winValue;
         break;
     case (playerChoice==="Scissors" || computerChoice==="Scissors"):
-        alert("it's a draw");
+        Winner.innerHTML="I'ts a draw";
         winValue= 0;
         return winValue;
         break;
@@ -120,40 +121,54 @@ function game(whoWins) {
 
     //checks if the game should end or not
     if (playerPoints>=5) {
-        alert('you won');
+        let PlWinner = document.getElementById("Winner");
+        PlWinner.innerHTML="You won this Game";
+
         gameEnd();
         return;
     } else if (computerPoints>=5) {
-        alert('the computer won');
+        let PcWinner = document.getElementById("Winner");
+        PcWinner.innerHTML="The Computer won this Game";
         gameEnd();
         return;
 
     } else {
+        let DrWinner = document.getElementById("Winner");
+        //DrWinner.innerHTML="I'ts a draw";
         return;
     }
 }
 
 //disables the game buttons as the game ended leaving only reset game clickable
 function gameEnd() {
-    document.getElementById("but1").disabled = true;
-    document.getElementById("but2").disabled = true;
-    document.getElementById("but3").disabled = true;
+    document.getElementById("groupButton").style.display = "none";
+    //document.getElementById("but2").style.display = "none";
+    //document.getElementById("but3").style.display = "none";
 
 }
 
 //restarts the game (resets all the counters) by calling start game
 function resClick() {
+    let Winner = document.getElementById("Winner");
+    Winner.innerHTML="";
+    document.getElementById("groupButton").style.display = "block";
+    //document.getElementById("but2").style.display = "block";
+    //document.getElementById("but3").style.display = "block";
     startGame();
+
+    
 }
 
 
 //activates the other buttons after clicking start and starts the game by calling game function
 //resets the counters for the win
 function startGame() {
-    document.getElementById("but1").disabled = false;
+    /*document.getElementById("but1").disabled = false;
     document.getElementById("but2").disabled = false;
     document.getElementById("but3").disabled = false;
-    document.getElementById("resButton").disabled = false;
+    document.getElementById("resButton").disabled = false;*/
+    document.getElementById("game1").style.display = "block";
+    document.getElementById("startBut").style.display = "none";
     playerPoints=0;
     computerPoints=0;
     //resets the counters that are displayed in the page too
@@ -161,8 +176,6 @@ function startGame() {
     PCpoints.innerHTML= 0;
     let MYpoints = document.getElementById('MyPoints') ;
     MYpoints.innerHTML= 0;
-    document.getElementById("startBut").disabled = true;
-
 }
 
 

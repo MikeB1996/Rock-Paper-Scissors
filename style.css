@@ -14,6 +14,13 @@ body {
     
 }
 
+.roundWinner {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: red;
+}
+
 .instruction {
     font-size: 18px;
     padding: 16px;
@@ -21,7 +28,8 @@ body {
 
 .rulesdes {
     font-size: 18px;
-    padding: 16px;
+    padding: 16px 180px;
+    
 }
 
 .choice {
@@ -32,8 +40,16 @@ body {
 
 .restart {
     display: flex;
-    gap: 50px;
+    gap: 230px;
     align-items: center;
+}
+
+.startB {
+    display: block;
+}
+
+.game {
+    display: none;
 }
 
 
