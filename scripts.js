@@ -134,7 +134,6 @@ function game(whoWins) {
 
     } else {
         let DrWinner = document.getElementById("Winner");
-        //DrWinner.innerHTML="I'ts a draw";
         return;
     }
 }
@@ -142,8 +141,7 @@ function game(whoWins) {
 //disables the game buttons as the game ended leaving only reset game clickable
 function gameEnd() {
     document.getElementById("groupButton").style.display = "none";
-    //document.getElementById("but2").style.display = "none";
-    //document.getElementById("but3").style.display = "none";
+    
 
 }
 
@@ -152,8 +150,6 @@ function resClick() {
     let Winner = document.getElementById("Winner");
     Winner.innerHTML="";
     document.getElementById("groupButton").style.display = "block";
-    //document.getElementById("but2").style.display = "block";
-    //document.getElementById("but3").style.display = "block";
     startGame();
 
     
@@ -163,10 +159,8 @@ function resClick() {
 //activates the other buttons after clicking start and starts the game by calling game function
 //resets the counters for the win
 function startGame() {
-    /*document.getElementById("but1").disabled = false;
-    document.getElementById("but2").disabled = false;
-    document.getElementById("but3").disabled = false;
-    document.getElementById("resButton").disabled = false;*/
+    
+    
     document.getElementById("game1").style.display = "block";
     document.getElementById("startBut").style.display = "none";
     playerPoints=0;
